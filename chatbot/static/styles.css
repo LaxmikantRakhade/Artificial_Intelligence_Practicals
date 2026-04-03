@@ -1,0 +1,163 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --ink: #1e1e1e;
+  --muted: #6b6b6b;
+  --blue: #4b7cff;
+  --light: #eef1f7;
+  --border: #d9dde7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 36px;
+  padding: 32px 16px 48px;
+}
+
+.robot {
+  display: grid;
+  place-items: center;
+  gap: 10px;
+}
+
+.antenna {
+  width: 6px;
+  height: 34px;
+  background: #1c1c1c;
+  border-radius: 999px;
+  position: relative;
+}
+
+.antenna::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.head {
+  width: 120px;
+  height: 82px;
+  background: var(--card);
+  border: 2px solid #2b2b2b;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  position: relative;
+}
+
+.eye {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.mouth {
+  position: absolute;
+  bottom: 14px;
+  width: 40px;
+  height: 4px;
+  border-radius: 999px;
+  background: #1d1d1d;
+}
+
+.body {
+  width: 140px;
+  height: 90px;
+  background: var(--card);
+  border: 2px solid #2b2b2b;
+  border-radius: 14px;
+}
+
+.chatbox {
+  width: min(540px, 92vw);
+  background: var(--card);
+  border: 2px solid #2b2b2b;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.chatbox h1 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.chat-window {
+  height: 260px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafbff;
+}
+
+.bubble {
+  max-width: 80%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+}
+
+.bot {
+  align-self: flex-start;
+  background: var(--light);
+  color: #2b2b2b;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.chat-form {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.chat-form input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid #cbd2e2;
+  outline: none;
+}
+
+.chat-form input:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 2px rgba(75, 124, 255, 0.2);
+}
+
+.chat-form button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--blue);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
